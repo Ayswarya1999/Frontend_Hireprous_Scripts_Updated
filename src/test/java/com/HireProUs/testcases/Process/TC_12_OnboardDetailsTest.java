@@ -21,6 +21,8 @@ public class TC_12_OnboardDetailsTest extends BaseClass {
 			StartTest(TestCaseName, "HireProUs Login Functionality");
 			try {
 				login.Login(2);
+				
+				
 				rc.OnboardingDetails(SheetName, rowNum);
 			} catch (Throwable t) {
 				System.out.println(t.getLocalizedMessage());
