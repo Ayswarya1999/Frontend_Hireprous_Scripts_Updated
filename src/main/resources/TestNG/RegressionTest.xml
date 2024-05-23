@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="HireProusInternal">
+
+<parameter name="browserName" value="chrome"/>
+<parameter name="environment" value="Test"/>
+
+<test name ="HireProusInternal" >
+<parameter name="SheetName" value="Internal"/>
+<parameter name="rowNum" value="2"/>
+
+<parameter name="ErrorMessage" value="False"/>
+<classes>
+<!--<class name="com.HireProUs.testcases.login.TC_01_LoginTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_02_JobRequestTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_03_AddCandidateTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_04_ResumeShorlistTest"></class>
+
+<class name="com.HireProUs.testcases.Process.TC_05_ScheduleInterviewR1Test"></class>
+<class name="com.HireProUs.testcases.Process.TC_06_InterviewProcessR1Test"></class> 
+<class name="com.HireProUs.testcases.Process.TC_07_ScheduleInterviewR2Test"></class> 
+<class name="com.HireProUs.testcases.Process.TC_08_InterviewProcessR2Test"></class>
+<class name="com.HireProUs.testcases.Process.TC_09_ScheduleInterviewHrRoundTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_10_InterviewProcessHrRoundTest"></class>  
+<class name="com.HireProUs.testcases.Process.TC_11_BUHeadApprovalTest"></class>-->
+
+<class name="com.HireProUs.testcases.Process.TC_12_OnboardDetailsTest"></class>
+
+
+<!-- <class name="com.HireProUs.testcases.Process.TC_10_NegativeFieldSoftAssertTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_11_NegativeErrorMessageSoftAssertTest"></class> -->
+</classes>
+</test>
+</suite>
+
+
