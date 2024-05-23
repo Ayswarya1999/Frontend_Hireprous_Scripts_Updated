@@ -1,14 +1,7 @@
 package com.HireProUs.testcases.Process;
-
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
-
 import org.testng.annotations.Test;
-
 import com.HireProUs.Engine.BaseClass;
-import com.HireProUs.ReusableMethods.HireProUsConstants;
-
 import org.testng.annotations.Parameters;
 
 public class TC_10_InterviewProcessHrRoundTest extends BaseClass {

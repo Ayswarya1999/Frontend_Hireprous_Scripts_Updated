@@ -2,32 +2,18 @@ package com.HireProUs.ReusableMethods;
 
 import java.awt.AWTException;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.zaproxy.clientapi.core.ClientApiException;
-
 import com.HireProUs.Engine.BaseClass;
 import com.HireProUs.Engine.CommonMethod;
-import com.HireProUs.Engine.XlsReader;
-import com.HireProUs.testcases.login.TC_01_LoginTest;
 
 public class ReusableMethodCommon extends BaseClass {
 	public static ReusableMethodCommon rc = new ReusableMethodCommon();
@@ -225,7 +211,6 @@ public class ReusableMethodCommon extends BaseClass {
 		testlog.info("Given User adding candidate details");
 		CommonMethod.RobustclickElementVisible("AddCandidateBtn", "JobRequestReference");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestReference", 0);
-
 //		Preparing all input Data
 		Map<String, String> inputData = new HashMap<>();
 		String firstname = USfaker.address().firstName();
@@ -346,8 +331,7 @@ public class ReusableMethodCommon extends BaseClass {
 		rc.ScheduleInterview(SheetName, rowNum);
 	}
 
-	///////////////////////////////////// Interview Process Round 1
-	///////////////////////////////////// ////////////////////////////////
+	//////////////////// Interview Process Round 1////////////////////////////
 
 	public void InterviewProcessR1(String SheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
@@ -429,12 +413,11 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.Robustclick("InterviewProcessSaveBtn");
 //		CommonMethod.RobustclickElementVisible("InterviewProcessSaveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Interview Process Completed Successfully!");
-		rc.SignOut();
+//		rc.SignOut();
 
 	}
 
-	//////////////////////////////////////// Schedule HR
-	//////////////////////////////////////// Interview//////////////////////////
+	//////////////////////////////////////// Schedule HR Interview//////////////////////////
 
 	public void ScheduleInterviewHrRound(String SheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
@@ -484,6 +467,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewRemarks", 0);
 		CommonMethod.sendKeys("InterviewRemarks", data.getCellData(SheetName, "HrInterviewRemarks", rowNum));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ScheduleInterviewSaveBtn", 0);
+		CommonMethod.Robustclick("ScheduleInterviewSaveBtn");
 //		CommonMethod.RobustclickElementVisible("ScheduleInterviewSaveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Interview Schedule Added Successfully!");
 	}
@@ -547,6 +531,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.RobustclickElementVisible("BUSelectBtn", "ReasonForApproval");
 		CommonMethod.sendKeys("ReasonForApproval", data.getCellData(SheetName, "ReasonForApproval", rowNum));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("BUApproveBtn", 0);
+		CommonMethod.Robustclick("BUApproveBtn");
 //		CommonMethod.RobustclickElementVisible("BUApproveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Candidate selected Successfully!");
 	}
@@ -557,13 +542,12 @@ public class ReusableMethodCommon extends BaseClass {
 		String[] splits = existingEmployeeId.split("-");
 		int newEmpId = Integer.parseInt(splits[1]) + 1;
 		String EmpId = String.format("PE-%03d", newEmpId);
-	    return EmpId;
+		return EmpId;
 
 	}
 
 	public void OnboardingDetails(String SheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
-
 		testlog.info("Given Recruitment Manager Onboarding the candiadte");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
 		CommonMethod.RobustclickElementVisible("HumanResourceTab", "RecruitmentTab");
@@ -597,7 +581,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.sendKeys("OnboardDetailEmail", inputData.get("Email"));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("OnboardDetailsSaveBtn", 0);
 		CommonMethod.Robustclick("OnboardDetailsSaveBtn");
-		CommonMethod.RobustclickElementVisible("BUApproveBtn", "ResumeShortlistedSuccessMessage");
+//		CommonMethod.RobustclickElementVisible("BUApproveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Candidate Selected Status Added Successfully!");
 		data.setCellData(SheetName, "EmployeeIDByHR", rowNum, UniqueEmployeeId(SheetName, rowNum));
 

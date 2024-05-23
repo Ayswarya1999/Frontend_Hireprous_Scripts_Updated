@@ -7,13 +7,13 @@ import java.util.Properties;
 import org.testng.annotations.Test;
 
 import com.HireProUs.Engine.BaseClass;
-import com.HireProUs.ReusableMethods.HireProUsConstants;
+
 
 import org.testng.annotations.Parameters;
 
 public class TC_12_OnboardDetailsTest extends BaseClass {
 
-	@Test//(dependsOnMethods = { "com.HireProUs.testcases.Process.TC_11_BUHeadApprovalTest.TC_11_BUHeadApproval" })
+	@Test(dependsOnMethods = { "com.HireProUs.testcases.Process.TC_11_BUHeadApprovalTest.TC_11_BUHeadApproval" })
 	@Parameters({ "SheetName", "rowNum" })
 	public void TC_12_OnboardDetails(String SheetName, int rowNum) throws IOException {
 		
@@ -21,8 +21,6 @@ public class TC_12_OnboardDetailsTest extends BaseClass {
 			StartTest(TestCaseName, "HireProUs Login Functionality");
 			try {
 				login.Login(2);
-				
-				
 				rc.OnboardingDetails(SheetName, rowNum);
 			} catch (Throwable t) {
 				System.out.println(t.getLocalizedMessage());
