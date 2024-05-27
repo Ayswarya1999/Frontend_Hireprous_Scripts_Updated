@@ -13,7 +13,7 @@ import org.testng.annotations.Parameters;
 
 public class TC_12_OnboardDetailsTest extends BaseClass {
 
-	@Test(dependsOnMethods = { "com.HireProUs.testcases.Process.TC_11_BUHeadApprovalTest.TC_11_BUHeadApproval" })
+	@Test //(dependsOnMethods = { "com.HireProUs.testcases.Process.TC_11_BUHeadApprovalTest.TC_11_BUHeadApproval" })
 	@Parameters({ "SheetName", "rowNum" })
 	public void TC_12_OnboardDetails(String SheetName, int rowNum) throws IOException {
 		

@@ -413,7 +413,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.Robustclick("InterviewProcessSaveBtn");
 //		CommonMethod.RobustclickElementVisible("InterviewProcessSaveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Interview Process Completed Successfully!");
-//		rc.SignOut();
+		rc.SignOut();
 
 	}
 
@@ -470,6 +470,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.Robustclick("ScheduleInterviewSaveBtn");
 //		CommonMethod.RobustclickElementVisible("ScheduleInterviewSaveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Interview Schedule Added Successfully!");
+		rc.SignOut();
 	}
 
 //////////////////////////////////////HR Interview Process//////////////////////////////////////////
@@ -506,7 +507,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.Robustclick("InterviewProcessSaveBtn");
 //		CommonMethod.RobustclickElementVisible("InterviewProcessSaveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Interview Process completed Successfully!");
-
+		rc.SignOut();
 	}
 
 	////////////////////////////////// BU Head Approval////////////////////////////
@@ -534,6 +535,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.Robustclick("BUApproveBtn");
 //		CommonMethod.RobustclickElementVisible("BUApproveBtn", "ResumeShortlistedSuccessMessage");
 		testlog.info("Candidate selected Successfully!");
+		rc.SignOut();
 	}
 
 ////////////////////////////////////Onboarding Process////////////////////////////////
